@@ -1,0 +1,12 @@
+---
+# Tasks for the default_packages role
+- name: Change hostname
+  shell: "echo {{ inventory_hostname }} > /etc/hostname"
+  when: "inventory_hostname != ansible_hostname"
+
+- name: Install default packages # Task name
+  apt: # Module to be used
+    name: "{{ item }}" # Package name from the loop
+    state: present # Action parameter. present - install, absent - remove
+  loop:
+    - "{{ packages_to_install }}" # Loop will iterate over all values from the "packages_to_install" variable

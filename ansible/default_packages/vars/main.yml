@@ -1,0 +1,9 @@
+---
+# default_packages vars
+packages_to_install:
+  - net-tools
+  - dnsutils
+  - wget
+  - curl
+  - mc
+  - rsync

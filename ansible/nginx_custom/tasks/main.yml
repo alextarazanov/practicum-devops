@@ -1,0 +1,14 @@
+---
+# nginx_custom tass
+
+- name: Nginx Install 
+  apt:
+    name: "nginx"
+    state: present
+
+- name: Nginx Custom Page
+  ansible.builtin.template:
+    src: index.j2
+    dest: /var/www/html/index.nginx-debian.html
+#  when: "'vm_1' in inventory_hostname" # Only for vm_1
+  notify: "Nginx Reloader"
