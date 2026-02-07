@@ -1,0 +1,22 @@
+---
+linux: # Group of hosts
+  children: # Indicates that there will be a subgroup of hosts
+    nginx: # Name of the Nginx-serving subgroup
+      hosts: # Group hosts
+        vm_1: # Host name
+          ansible_host: 93.77.176.77 # Host address
+        vm_2: # Host name
+          ansible_host: 93.77.177.24 # Host address
+    proxy: # Name of the Nginx proxying subgroup
+      hosts: # Group hosts
+        vm_3: # Host name
+          ansible_host: 62.84.118.23 # Host address
+
+  vars: # Variables available or used for all subgroups
+    ansible_user: admin
+    connection_protocol: ssh
+    ansible_become: true # Whether to become another user after connection
+    ansible_become_method: sudo
+    ansible_become_user: root # Which user to switch to after connection
+    ansible_ssh_private_key_file: /home/alex/project4
+    ansible_python_interpreter: /usr/bin/python3

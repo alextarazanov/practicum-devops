@@ -1,0 +1,21 @@
+---
+- name: VM config
+  hosts: all
+  roles:
+    - role: default_packages # Change VM name and install packages 
+  tags:
+    - install packages
+
+- name: Nginx Out Setup
+  hosts: nginx
+  roles:
+    - role: nginx_custom # Show cystom hello page
+  tags:
+    - nginx custom
+
+- name: Nginx Proxy Setup
+  hosts: proxy
+  roles:
+    - role: nginx_proxy # From 3000 to 80 port
+  tags:
+    - nginx proxy
