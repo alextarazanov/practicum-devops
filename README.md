@@ -8,3 +8,4 @@
 * Сюда заливаю исключительно файлы по Ansible и Terraform без файлов секретов (по понятным причинам).
 * На файлы с секретами ссылаюсь и задействую в переменных значения из этих файлов.
 * README для ансибловых ролей сгенерировал с помощью https://docsible.github.io/
+* Лог плейбука: https://github.com/alextarazanov/practicum-devops/blob/main/ansible-playbook-log.md
